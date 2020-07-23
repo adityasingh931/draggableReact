@@ -120,6 +120,11 @@ class ConfigView extends Component{
             {this.state.widgets.map((item, index)=>{
             return <div style={{backgroundColor: item.color}} key={index} data-grid={item.grid}>
               <div>
+              <ResponsiveGridLayout>
+              <div key="a" data-grid={{x: 0, y: 0, w: 0, h: 0}}>a</div>
+              <div key="b" data-grid={{x: 1, y: 0, w: 1, h: 1, minW: 1, maxW: 4}}>b</div>
+              <div key="c" data-grid={{x: 4, y: 0, w: 1, h: 1}}>c</div>
+              </ResponsiveGridLayout>
               <button onClick={() => this.showModel(index)}>Edit</button>
               {(this.state.widgets.length-1)===index ?
               <button onClick={() => this.removeWidget(index)}>remove</button>
